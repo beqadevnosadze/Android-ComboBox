@@ -1,5 +1,7 @@
 package ge.ndc.ndc.controls;
 
+
+
 import android.content.Context;
 import android.graphics.Color;
 import android.text.Html;
