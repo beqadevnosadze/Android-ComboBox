@@ -153,19 +153,19 @@ public class ComboBox extends AutoCompleteTextView{
         return _dataSource;
     }
 
-    public <T> void SetDataSource(ArrayList<T> source,Activity context,String DisplayMember,String ValueMember){
+    public <T> void SetDataSource(ArrayList<T> source,String DisplayMember,String ValueMember){
 
         _displayMember=DisplayMember;
         _valueMember=ValueMember;
 
-        SetDataSource(source,  context);
+        SetDataSource(source);
     }
 
-   public <T> void SetDataSource(ArrayList<T> source,Activity context){
+   public <T> void SetDataSource(ArrayList<T> source){
 
        _dataSource=(ArrayList<T>)source.clone();
 
-       ComboAdapter comboAdapter=new ComboAdapter(context,android.R.layout.simple_dropdown_item_1line,source,_displayMember);
+       ComboAdapter comboAdapter=new ComboAdapter(this.getContext(),android.R.layout.simple_dropdown_item_1line,source,_displayMember);
 
        setAdapter(comboAdapter);
    }
